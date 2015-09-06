@@ -1,0 +1,13 @@
+functions:
+
+1. limit
+2. version()
+3.SHOW COLUMNS FROM bbc
+4.DESCRIBE casting
+5. new user permission
+6.SHOW PROCESSLIST;
+KILL 230307
+7.change the password:SET password FOR scott@localhost=password('tiger')
+8.SELECT USER()
+9.If the data contains a single quote it must be escaped.
+10.quiz are really good to practice.

@@ -1,0 +1,80 @@
+Advantages of MongoDB over RDBMS
+Schema less : MongoDB is document database in which one collection holds different different documents. Number of fields, content and size of the document can be differ from one document to another.
+
+Structure of a single object is clear
+
+No complex joins
+
+Deep query-ability. MongoDB supports dynamic queries on documents using a document-based query language that's nearly as powerful as SQL
+
+Tuning
+
+Ease of scale-out: MongoDB is easy to scale
+
+Conversion / mapping of application objects to database objects not needed
+
+Uses internal memory for storing the (windowed) working set, enabling faster access of data
+
+Why should use MongoDB
+Document Oriented Storage : Data is stored in the form of JSON style documents
+Index on any attribute
+
+Replication & High Availability
+
+Auto-Sharding
+
+Rich Queries
+
+Fast In-Place Updates
+
+Professional Support By MongoDB
+
+Where should use MongoDB?
+Big Data
+
+Content Management and Delivery
+
+Mobile and Social Infrastructure
+
+User Data Management
+
+Data Hub
+
+Link for downloading MongoDB :
+https://www.mongodb.org/downloads
+
+1. MongoDB use DATABASE_NAME is used to create database ex: use DATABASE_NAME
+2. MongoDB db.dropDatabase() command is used to drop a existing database. ex: db.dropDatabase()
+3. MongoDB db.createCollection(name, options) is used to create collection. ex:db.createCollection(name, options) , name = string and options =(Optional) Specify options about memory size and indexing
+4. MongoDB's db.collection.drop() is used to drop a collection from the database  ex:db.COLLECTION_NAME.drop()
+5. To insert data into MongoDB collection, you need to use MongoDB's insert() or save()method.
+6. To query data from MongoDB collection, you need to use MongoDB's find() method. ex:db.COLLECTION_NAME.find()
+7. To display the results in a formatted way, you can use pretty() method. ex: db.mycol.find().pretty()
+8. In the find() method if you pass multiple keys by separating them by ',' then MongoDB treats it AND condition ex:db.mycol.find({key1:value1, key2:value2}).pretty()
+9. To query documents based on the OR condition, you need to use $or keyword  ex:db.mycol.find(
+   {
+      $or: [
+	     {key1: value1}, {key2:value2}
+      ]
+   }
+).pretty()
+10. db.COLLECTION_NAME.update(SELECTIOIN_CRITERIA, UPDATED_DATA) -updating data
+11.The save() method replaces the existing document with the new document passed in save() method.db.COLLECTION_NAME.save({_id:ObjectId(),NEW_DATA})
+12.MongoDB's remove() method is used to remove document from the collection. remove() method accepts two parameters ex: db.COLLECTION_NAME.remove(DELLETION_CRITTERIA)
+13. remove only one document ex: db.COLLECTION_NAME.remove(DELETION_CRITERIA,1)
+14: remove all documents ex: db.mycol.remove()
+15. To limit the records in MongoDB, you need to use limit() method.ex: db.COLLECTION_NAME.find().limit(NUMBER),db.mycol.find({},{"title":1,_id:0}).limit(2)
+{"title":"MongoDB Overview"}
+{"title":"NoSQL Overview"}
+16.Apart from limit() method there is one more method skip() which also accepts number type argument and used to skip number of documents.
+ex: db.COLLECTION_NAME.find().limit(NUMBER).skip(NUMBER)
+db.mycol.find({},{"title":1,_id:0}).limit(1).skip(1)
+{"title":"NoSQL Overview"}
+>
+17.To sort documents in MongoDB, you need to use sort() method ex:db.COLLECTION_NAME.find().sort({KEY:1})
+db.mycol.find({},{"title":1,_id:0}).sort({"title":-1})
+{"title":"Tutorials Point Overview"}
+{"title":"NoSQL Overview"}
+{"title":"MongoDB Overview"}
+>
+18. To create an index you need to use ensureIndex() method of mongodb. ex:db.COLLECTION_NAME.ensureIndex({KEY:1}),db.COLLECTION_NAME.ensureIndex({KEY:1})db.mycol.ensureIndex({"title":1,"description":-1})

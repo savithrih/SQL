@@ -1,0 +1,39 @@
+
+SELECT * FROM faves;
+
+
+SELECT clients.company, SUM(billing.amount) AS total_sales 
+
+FROM clients 
+LEFT JOIN billing
+ON billing.client_id = client.id 
+
+GROUP BY clients.company 
+HAVING SUM(billing.amount) > 3500;
+
+
+
+SELECT DATE_FORMAT('2012-03-09 12:30', '%W %M %D %Y at %r') AS great_time;
+
+
+
+
+SELECT * FROM customers 
+JOIN orders
+ON customers.id = orders.customer_id;
+
+
+
+
+
+
+SELECT * FROM users LEFT JOIN posts 
+ON users.id = posts.user_id
+
+
+
+
+
+
+
+
